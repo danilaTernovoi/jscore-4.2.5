@@ -1,0 +1,95 @@
+// ********************
+@font-face {
+  font-family: "roboto-regular";
+  src: url(../fonts/roboto-regular.ttf);
+}
+// ********************
+$color--global: #c4c4c4;
+$grey: #e3e3e3;
+$pink: #e27beb;
+// ********************
+$font-size--large: 48px;
+$font-size--medium: 30px;
+$font-size--small: 24px;
+// ********************
+body {
+  font-family: roboto-regular;
+  background-color: $color--global;
+}
+// ********************
+@mixin bg {
+  background-color: rgba(navy, 0.1);
+}
+// ********************
+@mixin padding-box($width: auto) {
+  box-sizing: border-box;
+  padding: 5px 13px;
+  width: $width;
+}
+// ********************
+.app {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 1rem;
+}
+// ********************
+.input-search {
+  @include padding-box(100%);
+
+  margin: 0;
+  border: none;
+  font-size: $font-size--large;
+}
+// ********************
+.auto-complete {
+  display: flex;
+  flex-direction: column;
+}
+// ********************
+.complete-item {
+  @include padding-box(100%);
+
+  font-size: $font-size--medium;
+  background-color: $grey;
+  border: 1px solid black;
+
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: lighten($grey, 2%);
+  }
+
+  &:active {
+    color: white;
+  }
+}
+// ********************
+.app__repos {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+// ********************
+.repos {
+  @include padding-box;
+
+  font-size: 24px;
+  background-color: $pink;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+}
+// ********************
+.repos__info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+// ********************
+.repos__close {
+  font-size: 100px;
+  color: red;
+}
